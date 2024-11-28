@@ -1,6 +1,15 @@
+import { newsMock } from "../../mocks/newsMock";
+import { useState } from "react";
+import Blog from "./Blogs";
 const Home = () => {
+    const [blogs, setBlogs] = useState(newsMock);
     return (
-        <h1>Home</h1>
-    )
-}
+        <div>
+            <h1>Home</h1>
+            {blogs.map((blog) => (
+                 <Blog blog={blog} key={blog.source.id}/>
+            ))} 
+        </div>
+    );
+};
 export default Home
