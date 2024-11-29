@@ -6,8 +6,6 @@
     padding: 30px;
     margin: 20px;
     border-radius: 20px;
-    cursor: pointer;
-
 }
 .imagen{
     width: 300px;
@@ -25,4 +23,24 @@
     padding-left: 10px;
     margin-right: 20px;
     font-weight: bold;
+}
+
+.verMas{
+    font-weight: bold;
+    color: blue;
+    font: size 20px; 
+   }
+
+.verMas:hover{
+    font-weight: bold;
+    color: white;
+    font: size 20px; 
+    background-color: blue;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    transition: background-color 0.1s ease;
+    transition: color 0.5s ease;
+
+    
 }

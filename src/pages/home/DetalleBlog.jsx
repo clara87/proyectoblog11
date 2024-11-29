@@ -2,6 +2,7 @@ import { useParams} from "react-router-dom";
 import{newsMock} from "../../mocks/newsMock";
 import { useState } from "react";
 import  "./DetalleBlog.css";
+import {Link} from "react-router-dom";
 
 const DetalleBlog = () => {
     const {id} = useParams();
@@ -21,6 +22,11 @@ const DetalleBlog = () => {
                 </div>
                 <p className="description">{blog.description}</p>
                 <p className="content">{blog.content}</p>
+                
+                
+                <div className="btn">
+                    <Link to={`/`} className="verMas">Volver</Link>
+                    </div>
             </div>
         </div>
         
