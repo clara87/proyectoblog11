@@ -1,0 +1,36 @@
+.topnav{
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px ;   
+    position: fixed;
+    width: 100%;
+
+    
+}
+.links-start a{
+    color: white;
+    text-align: center;
+    padding: 5px ;
+    transition: background-color 1s ease;
+    
+    
+}
+
+.links-start a:hover{
+    background-color: #575757;
+}
+
+.links-end a{
+    color: white;
+    text-align: center;
+    padding: 5px;
+    transition: background-color 1s ease;
+}
+
+
+
+.links-end a:hover{
+    background-color: #575757;
+}

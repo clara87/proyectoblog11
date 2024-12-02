@@ -1,20 +1,33 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/home/Home';
 import DetalleBlog from './pages/home/DetalleBlog';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import {AuthProvider} from './context/AuthContext';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
 
 function App() {
-
   return (
-
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/blogs/:id' element={<DetalleBlog/>} />
+    <AuthProvider>
+      <BrowserRouter>
+        <Header></Header>
+        <Routes>
+          <Route path="/" element={<Home />} /> {/*consultar todos los blogs, que tengan estado habilitado*/}
+          <Route path="/blogs/:id" element={<DetalleBlog />} />  {/*consultar blog por id*/}
+          <Route path="/crear-blog" element={<crearBlog />} /> {/*formulario para crear blog*/}
+          <Route path="/modificar-blog/:idblog" element={<modificarBlog />} /> {/*formulario para modificar blog*/}
+          {/*<Route path="/eliminar-blog/:idblog" element={<eliminarBlog/>} />*/}
+          {/*borrado fisico de la BD, borrado logico cambiamos un estado*/}
+          <Route path="/mis-blogs/" element={<misBlogs />} />  {/*listar mis blogs o tarjetas deacuerdo al ide de usuario de session*/}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
-    </BrowserRouter>
-
-  )
+        <Footer />
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
 export default App;
