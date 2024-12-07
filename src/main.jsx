@@ -1,9 +1,21 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 createRoot(document.getElementById('root')).render(
- 
-    <App />
-  
+    <>
+        <App />
+        <ToastContainer
+            position='top-right'
+            autoClose={20000}
+            hideProgressBar={true}
+            closeOnClick
+            rtl={false}
+            draggable
+            pauseOnHover
+            theme='dark'
+        />
+    </>
 )

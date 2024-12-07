@@ -1,14 +1,11 @@
-import { newsMock } from "../../mocks/newsMock";
-import { useState } from "react";
-import Blog from "./Blogs";
+
+import ListadoBlogs from "../../components/ListadoBlogs";
 const Home = () => {
-    const [blogs, setBlogs] = useState(newsMock);
+
     return (
         <div>
             <h1>Home</h1>
-            {blogs.map((blog) => (
-                 <Blog blog={blog} key={blog.source.id}/>
-            ))} 
+            <ListadoBlogs/>
         </div>
     );
 };
